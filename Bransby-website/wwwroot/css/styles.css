@@ -10169,6 +10169,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .portfolio-card:not(.card) {
+  height: 300px;
   -webkit-transition: -webkit-box-shadow .3s;
   transition: -webkit-box-shadow .3s;
   transition: box-shadow .3s;
@@ -10176,8 +10177,16 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   text-align: center;
 }
 
+.portfolio-card:not(.card) > img {
+  max-width: 100%;
+  max-height: 80%;
+}
+
 .portfolio-card:not(.card) .portfolio-card-body {
   padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 90%;
 }
 
 .no-touchevents .portfolio-card:not(.card):hover {
