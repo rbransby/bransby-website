@@ -24,12 +24,9 @@ namespace Bransby_website.Pages
             _emailSettings = emailOptions.Value;
         }
 
-        public void OnGet()
+        public void OnGet(bool hasSubmittedForm = false)
         {
-            if (!TempData.Keys.Contains("HasSubmittedForm"))
-            {
-                TempData["HasSubmittedForm"] = false;
-            }
+            HasSubmittedForm = hasSubmittedForm;
         }
 
         public async Task<IActionResult> OnPostAsync(string name, string email, string subject, string message)
@@ -59,9 +56,8 @@ namespace Bransby_website.Pages
 
 
             }
-            TempData["HasSubmittedForm"] = true;
-            this.HasSubmittedForm = true;
-            return RedirectToPage("/Index");
+            
+            return RedirectToPage("/Index",new { HasSubmittedForm = true });
         }
 
     }

@@ -154,7 +154,7 @@
 <section class="bg-secondary bg-cover bg-no-repeat pt-5 pb-4" style="background-image: url(img/homepages/freelancer-portfolio/contacts-bg.png);" data-offset-top="-10" id="contacts">
     <div class="container py-2">
 
-        @if (!(bool)(TempData["HasSubmittedForm"]))
+        @if (!Model.HasSubmittedForm)
         {
             <h2 class="h3 block-title text-center">Contact me<small>I'll be glad to answer all your questions. I normally respond within 1 business day.</small></h2>
             <form method="post" class="needs-validation pt-4 pb-5" novalidate>
