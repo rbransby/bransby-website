@@ -16,6 +16,9 @@ namespace Bransby_website.Pages
     {
         private readonly EmailSettings _emailSettings;
 
+        [BindProperty]
+        public bool HasSubmittedForm { get; set; } = false;
+
         public IndexModel(IOptions<EmailSettings> emailOptions)
         {
             _emailSettings = emailOptions.Value;
@@ -23,10 +26,13 @@ namespace Bransby_website.Pages
 
         public void OnGet()
         {
-
+            if (!TempData.Keys.Contains("HasSubmittedForm"))
+            {
+                TempData["HasSubmittedForm"] = false;
+            }
         }
 
-        public async Task OnPostAsync(string name, string email, string subject, string message)
+        public async Task<IActionResult> OnPostAsync(string name, string email, string subject, string message)
         {
             using (var client = new HttpClient
             {
@@ -53,6 +59,9 @@ namespace Bransby_website.Pages
 
 
             }
+            TempData["HasSubmittedForm"] = true;
+            this.HasSubmittedForm = true;
+            return RedirectToPage("/Index");
         }
 
     }
