@@ -1,8 +1,11 @@
 {
   "name": "RobBransby.com",
-  "short_name": "RobBransby.com",
+  "short_name": "RobBransby",
   "description": "Rob Bransby is a Web Developer and Consultant, based in Perth, Australia, providing Development services, Support and Consulting to enterprise, small business and solo practitioners and helping to bring their web and app ideas to life.",
   "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f5f5",
+  "theme_color": "#ac32e4",
   "icons": [
     {
       "src": "\/android-icon-36x36.png",
