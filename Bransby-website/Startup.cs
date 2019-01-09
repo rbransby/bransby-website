@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebEssentials.AspNetCore.Pwa;
 
 namespace Bransby_website
 {
@@ -34,6 +35,11 @@ namespace Bransby_website
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddProgressiveWebApp(new PwaOptions
+            {
+                RoutesToPreCache = "/, /js/vendor.min.js, /js/scripts.min.js, /css/styles.min.css",
+                Strategy = ServiceWorkerStrategy.CacheFirst
+            });
 
             services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
         }

@@ -685,7 +685,6 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, dt small,
 .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
   display: block;
   padding-top: 3px;
-  color: #8c8c8c;
 }
 
 h1, .h1 {
@@ -6879,7 +6878,6 @@ a.alert {
 .step .step-text {
   margin: 0;
   padding-top: 26px;
-  color: #8c8c8c;
   font-size: 14px;
 }
 
